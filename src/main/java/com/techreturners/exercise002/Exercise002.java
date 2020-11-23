@@ -6,7 +6,9 @@ public class Exercise002 {
     // Your task is to make the 'past' function return time past midnight converted to milliseconds.
 
     public int past(int h, int m, int s) {
-        // Your code here!
-        return 0;
+       int hh =(int)TimeUnit.HOURS.toMillis(h);
+        int mm = (int)TimeUnit.MINUTES.toMillis(m);
+        int ss = (int)TimeUnit.SECONDS.toMillis(s);
+        return hh + mm + ss;
     }
 }
