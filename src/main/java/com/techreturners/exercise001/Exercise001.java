@@ -11,7 +11,15 @@ public class Exercise001 {
     // Good luck!
 
     public int singles(int [] arr){
-        // Add your code here!
-        return 0;
+        HashMap<Integer, Integer> hm = new HashMap<>();
+        long s1 = 0, s2 = 0;
+        for(int x = 0; x < arr.length; x++){
+            if(!hm.containsKey(arr[x])){
+                s1 += arr[x];
+                hm.put(arr[x], 1);
+            }
+            s2 += arr[x];
+        }
+        return (int)(2* s1 - s2);
     }
 }
