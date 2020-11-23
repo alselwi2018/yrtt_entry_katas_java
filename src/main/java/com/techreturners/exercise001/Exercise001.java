@@ -1,5 +1,5 @@
 package com.techreturners.exercise001;
-
+import java.util.HashMap;
 public class Exercise001 {
 
     // In this Kata, you will be given an array of numbers in which two numbers occur once and the rest occur only twice. 
