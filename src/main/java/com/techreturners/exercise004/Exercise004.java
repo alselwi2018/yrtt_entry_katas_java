@@ -6,7 +6,7 @@ public class Exercise004 {
     // Leave punctuation marks untouched.
 
     public String pigLatin(String str) {
-        // Add your code here
-        return "";
+        return Pattern.compile(" +").splitAsStream(str).map(s->s.matches("[a-zA-Z!]+") ? s.substring(1)+ s.charAt(0) + "ay": s)
+        .collect(Collectors.joining(" "));
     }
 }
