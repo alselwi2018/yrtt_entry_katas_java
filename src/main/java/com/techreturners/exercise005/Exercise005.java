@@ -26,7 +26,23 @@ public class Exercise005 {
     // Good luck and enjoy!
 
     public String[] mexicanWave(String str) {
-        // Your code here!
-        return new String[] {};
+        str = str.toLowerCase();
+        int counts = countCharacter(str);
+        String[] wave = new String[counts];
+        for(int i = 0, x = 0; i < wave.length; i++, x++ ){
+            char ch = str.charAt(x);
+            while(Character.isWhitespace(ch)){
+                ch = str.charAt(++x);
+            }
+            StringBuilder build = new StringBuilder(str);
+            build.setCharAt(x, Character.toUpperCase(ch));
+            wave[i] = build.toString();
+        }
+        return wave;
+    }
+
+    private static int countCharacter(String countc){
+        int spaces = (int) countc.codePoints().filter(Character::isWhitespace).count();
+        return countc.length() - spaces;
     }
 }
